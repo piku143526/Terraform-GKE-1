@@ -3,12 +3,9 @@ resource "google_compute_firewall" "allow-ssh" {
   name    = "allow-ports"
   network = google_compute_network.main.name
 
-  allow {
+   allow {
     protocol = "tcp"
-    ports    = {
-      begin = 1
-      end   = 65536
-  }
+    ports    = ["22"]
   }
 
   source_ranges = ["0.0.0.0/0"]
